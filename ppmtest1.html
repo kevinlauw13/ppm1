@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width,
+	initial-scale=1">
+	<link rel=stylesheet href=jquery.mobile-1.4.5.css />
+	<script src=jquery.js></script>
+	<script src=jquery.mobile-1.4.5.js></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<div data-role=page id=win1>
+	<div data-role=header>
+		<h1>Home sweet home</h1>
+	</div>	
+	<div >
+		<a href="#popupNested" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-bars ui-btn-icon-left ui-btn-b" data-transition="pop">Choose Menu</a>
+		<div data-role="popup" id="popupNested" data-theme="none">
+   		<div data-role="collapsibleset" data-theme="b" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; width:250px;">
+		<ul data-role=listview>
+			<li><a href="#win2" data-transition=slide >Kalkulator</a></li>
+			<li><a href="#win3" data-transition=slide >RGB</a></li>
+			<li><a href="#win4" data-transition=pop >Rangkuman</a></li>
+		</ul>
+		</div>
+		</div>
+	</div>
+	<div data-role=footer data-position=fixed>
+		<h1>Welcome to My Web</h1>
+	</div>
+</div>
+
+<div data-role=page id=win2>
+	<div data-role=header>
+		<h1>Kalkulator</h1>
+	</div>	
+	<div >
+		<a href="#popupNested1" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-bars ui-btn-icon-left ui-btn-b" data-transition="pop">Choose Menu</a>
+		<div data-role="popup" id="popupNested1" data-theme="none">
+   		<div data-role="collapsibleset" data-theme="b" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; width:250px;">
+		<ul data-role=listview>
+			<li><a href="#win1" data-transition=slide >Home sweet home</a></li>
+			<li><a href="#win3" data-transition=slide >RGB</a></li>
+			<li><a href="#win4" data-transition=pop >Rangkuman</a></li>
+		</ul>
+		</div>
+		</div>
+	</div>
+	<script>
+$(document).ready(function(){
+    $("button").click(function(){
+	var bin = [];
+	var num =  $("#slider-3").val();
+	var d = $("#slider-3").val();
+	var hex= ("0"+(Number(d).toString(16))).slice(-2).toUpperCase()
+  while (num > 0) {
+  bin.unshift(num % 2);
+  num >>= 1; 
+  }
+  alert("Decimal to Binary :  " + bin.join(''));
+   alert("Decimal to Hexadecimal :  " + hex);
+    });
+});
+</script>
+    <label for="slider-3">Pilih bilangan desimal dari 1 - 1000</label>
+    <input type="range" name="slider-3" id="slider-3" data-track-theme="b" data-theme="b" min="0" max="1000" value="0">
+	<button>Show Value</button>
+
+	<div data-role=footer data-position=fixed>
+		<h1>Welcome to My Web</h1>
+	</div>
+</div>
+
+<div data-role=page id=win3>
+	<div data-role=header>
+		<h1>RGB</h1>
+	</div>	
+	<div >
+		<a href="#popupNested3" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-bars ui-btn-icon-left ui-btn-b" data-transition="pop">Choose Menu</a>
+		<div data-role="popup" id="popupNested3" data-theme="none">
+   		<div data-role="collapsibleset" data-theme="b" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; width:250px;">
+		<ul data-role=listview>
+			<li><a href="#win1" data-transition=slide >Home sweet home</a></li>
+			<li><a href="#win2" data-transition=slide >Kalkulator</a></li>
+			<li><a href="#win4" data-transition=pop >Rangkuman</a></li>
+		</ul>
+		</div>
+		</div>
+	</div>
+	
+	<form>
+	<label for="rgb">RGB</label>
+		<input type="text" name="rgb" id="rgb" value="">
+	</form>
+	<div data-role=footer data-position=fixed>
+		<h1>Welcome to My Web</h1>
+	</div>
+</div>
+
+<div data-role=page id=win4>
+	<div data-role=header>
+		<h1>Rangkuman</h1>
+	</div>	
+	<div >
+		<a href="#popupNested2" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-bars ui-btn-icon-left ui-btn-b" data-transition="pop">Choose Menu</a>
+		<div data-role="popup" id="popupNested2" data-theme="none">
+   		<div data-role="collapsibleset" data-theme="b" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; width:250px;">
+		<ul data-role=listview>
+			<li><a href="#win1" data-transition=slide >Home sweet home</a></li>
+			<li><a href="#win2" data-transition=slide >Kalkulator</a></li>
+			<li><a href="#win3" data-transition=pop >RGB</a></li>
+		</ul>
+		</div>
+		</div>
+	</div>
+	<div class="rwd-example">
+    <div class="ui-block-a">
+        <div class="ui-body ui-body-d">
+            <h2>Pertemuan 1</h2>
+            <p>Mengetahui tentang teknologi 1G-5G. Dimana, Hp (mobile phone) yang kita pakai tersebut tidak langsung seperti yang
+kita pakai saat ini dimana ada perkembangan dari 1G-5G. dan tentu saja kecepatannya akan
+terus berkembang dari setiap generasi hingga kita merasakannya saat ini. mengetahui kelebihan dan kelemahan dari 1G-5G</p>
+        </div>
+    </div>
+    <div class="ui-block-b">
+        <div class="ui-body ui-body-d">
+            <h2>Pertemuan 2</h2>
+            <p>Pada pertemuan ini saya mengenal VCS(Version Control System) dimana vcs adalah sebuah sistem yang mencatat setiap perubahan 
+terhadap sebuah berkas atau kumpulan berkas dimana VCS dibagi menjadi 3, yaitu : VCS lokal, VCS terpusat, VCS terdistribusi.
+Mengenal GIT dimana dapat digunakan di berbagai layanan seperti Github,Bitbucket, Assembla, Gitorious
+Keunggulan dari GIT :
+	1. Repository Syncing
+	2. Bekerja secara offline
+	3. Cheal local branching
+	4. Staging Area yang nyaman
+	5. Mampu menangani proyek besar secara efektif (Kecepatan & Ukuran Data).
+saya juga mengetahui cara menggunakan github serta beberapa fungsi seperti git init, git  statsu dll melalui latihan 1
+</p>
+        </div>
+    </div>
+    <div class="ui-block-c">
+        <div class="ui-body ui-body-d">
+            <h2>Pertemuan 3</h2>
+            <p>Pada pertemuan 3 saya mempelajari cara menggunakan jquery mobile dimana menggunakan sublime text atau notepad++.
+dari latihan tersebut saya mengetahui beberapa fungsi seperti data-role, data-transition, slider,list view, combobox, dll
+</p>
+        </div>
+    </div>
+</div><!-- /rwd-example -->
+	<div data-role=footer data-position=fixed>
+		<h1>Welcome to My Web</h1>
+	</div>
+</div>
+</body>
